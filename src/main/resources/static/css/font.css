@@ -1,0 +1,106 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?50dmtd');
+  src:  url('fonts/icomoon.eot?50dmtd#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?50dmtd') format('truetype'),
+    url('fonts/icomoon.woff?50dmtd') format('woff'),
+    url('fonts/icomoon.svg?50dmtd#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-prome:before {
+  content: "\e910";
+  color: #fff;
+}
+.icon-proph:before {
+  content: "\e911";
+  color: #fff;
+}
+.icon-prode:before {
+  content: "\e912";
+  color: #fff;
+}
+.icon-proinfo:before {
+  content: "\e913";
+  color: #fff;
+}
+.icon-tbar:before {
+  content: "\e90f";
+  color: #304156;
+}
+.icon-more:before {
+  content: "\e90e";
+  color: #fff;
+}
+.icon-forum:before {
+  content: "\e900";
+  color: #fff;
+}
+.icon-proposal:before {
+  content: "\e901";
+  color: #fff;
+}
+.icon-system:before {
+  content: "\e902";
+  color: #fff;
+}
+.icon-efficiency:before {
+  content: "\e903";
+  color: #fff;
+}
+.icon-executive:before {
+  content: "\e904";
+  color: #fff;
+}
+.icon-salesData:before {
+  content: "\e905";
+  color: #fff;
+}
+.icon-bi:before {
+  content: "\e906";
+  color: #fff;
+}
+.icon-okr:before {
+  content: "\e907";
+  color: #fff;
+}
+.icon-tp:before {
+  content: "\e908";
+  color: #fff;
+}
+.icon-project:before {
+  content: "\e909";
+  color: #fff;
+}
+.icon-home:before {
+  content: "\e90a";
+  color: #fff;
+}
+.icon-hpwd:before {
+  content: "\e90b";
+  color: #879aa3;
+}
+.icon-pwd:before {
+  content: "\e90c";
+  color: #879aa3;
+}
+.icon-user:before {
+  content: "\e90d";
+  color: #879aa3;
+}

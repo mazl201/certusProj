@@ -1,0 +1,12 @@
+.add-box{
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+.add-row{
+  margin: 0 1px;
+}
+.add-h5{
+  font-size: 16px;
+  margin-bottom: 10px;
+}

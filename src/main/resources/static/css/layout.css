@@ -1,0 +1,286 @@
+.i-wrapper {
+	position:relative;
+	height:100%;
+	width:100%;
+}
+.i-wrapper::after {
+	content:"";
+	display:table;
+	clear:both;
+}
+.i-aside {
+	transition:width .28s;
+	width:180px!important;
+	height:100%;
+	position:fixed;
+	top:0;
+	bottom:0;
+	left:0;
+	z-index:1001;
+	background-color:#304156;
+}
+.i-container {
+	min-height:100%;
+	transition:margin-left .28s;
+	margin-left:180px;
+}
+.i-header {
+	list-style:none;
+	position:relative;
+	margin:0;
+	padding-left:0;
+	background-color:#fff;
+	border-right:none;
+	border-bottom:1px solid #e6e6e6;
+	height:46px;
+	line-height:46px;
+	border-radius:0!important;
+}
+.i-main {
+	min-height:100%;
+	margin:20px;
+}
+/* nav */
+.nav {
+	width:180px;
+	height:100%;
+	position:fixed;
+	top:0;
+	bottom:0;
+	left:0;
+	z-index:1001;
+	background-color:#304156;
+	transition:all .3s;
+}
+.nav a {
+	display:block;
+	overflow:hidden;
+	padding-left:13px;
+	line-height:46px;
+	max-height:46px;
+	color:#fff;
+  transition:all .3s;
+  text-decoration: none;
+}
+.nav a span {
+  /* font-size: 14px; */
+	margin-left:30px;
+}
+.nav-item {
+	position:relative;
+}
+.nav-item.nav-show {
+	border-bottom:none;
+}
+.nav-item ul {
+	display:none;
+	background:rgb(38,52,69);
+}
+.nav-item ul li a{
+  background: #1f2d3d!important;
+}
+.nav-item ul li a:hover{
+  background: #001528!important;
+}
+.nav-item ul li a.select{
+  background: #001528!important;
+}
+.nav-item.nav-show ul {
+	display:block;
+}
+.nav-item>a:before {
+	content:"";
+	position:absolute;
+	left:0px;
+	width:2px;
+	height:46px;
+	background:#34A0CE;
+	opacity:0;
+	transition:all .3s;
+}
+.nav .nav-icon {
+	font-size:14px;
+	position:absolute;
+  margin-left:-1px;
+  top: 16px;
+  left: 13px;
+}
+/*---------------------*/
+.icon-more{
+  float:right;
+  line-height: 46px;
+  margin-right:20px;
+	font-size:14px;
+	transition:transform .3s;
+}
+/* 此处为导航右侧箭头 如果自定义iconfont 也需要替换*/
+/*---------------------*/
+.nav-show .icon-more {
+	transform:rotate(180deg);
+}
+.nav-show,.nav-item>a:hover {
+	color:#FFF;
+	background:rgba(0,0,0,.1);
+}
+.nav-show>a:before,.nav-item>a:hover:before {
+	opacity:1;
+}
+.nav-item li:hover a {
+	color:#FFF;
+	background:rgba(0,0,0,.1);
+}
+/* nav-mini */
+.nav-mini.nav {
+	width:36px;
+}
+/* .nav-mini.nav .nav-icon {
+	margin-left:-2px;
+} */
+.nav-mini.nav .nav-item>a span {
+	display:none;
+}
+.nav-mini.nav .nav-more {
+	margin-right:-20px;
+}
+.nav-mini.nav .nav-item ul {
+	position:absolute;
+	top:0px;
+	left:36px;
+	width:150px;
+	z-index:99;
+	background:#3C474C;
+	overflow:hidden;
+}
+.nav-mini.nav .nav-item:hover {
+	background:rgba(255,255,255,.1);
+}
+.nav-mini.nav .nav-item:hover .nav-item a {
+	color:#FFF;
+}
+.nav-mini.nav .nav-item:hover a:before {
+	opacity:1;
+}
+.nav-mini.nav .nav-item:hover ul {
+	display:block;
+}
+.scroll-wrapper{
+  position: absolute;
+  width: 100%!important;
+}
+#mini{
+  display: inline-block;
+  float: left;
+  margin-left: 20px;
+  margin-top: 16px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.crumbs_list{
+  display: inline-block;
+  float: left;
+}
+.crumbs_list li{
+  display: inline-block;
+  float:left;
+  margin-right: 5px;
+}
+.crumbs_list li:last-child a{
+  color: #97a8be;
+  cursor: text;
+}
+.crumbs_list li span{
+  display:inline-block;
+  vertical-align: middle;
+}
+.crumbs_list li label{
+  display:inline-block;
+  vertical-align: middle;
+  padding-right: 5px;
+}
+.user{
+  display: inline-block;
+  float: right;
+  padding-right: 20px;
+}
+.i-user{
+  display: inline-block;
+  width: 88px;
+  cursor: pointer;
+}
+.i-user label{
+  display: inline-block;
+  font-size: 100%;
+  line-height: 46px;
+  position: relative;
+  width: 70px;
+  padding: 0 3px;
+  text-align: center;
+  cursor: pointer;
+}
+.i-user b{
+  position: absolute;
+  display: block;
+  width:0;
+  height:0;
+  overflow:hidden;
+  font-size: 0;     /*是因为, 虽然宽高度为0, 但在IE6下会具有默认的 */
+  line-height: 0;  /* 字体大小和行高, 导致盒子呈现被撑开的长矩形 */
+  border-width:5px;
+  border-style:solid;  /*ie6下会出现不透明的兼容问题*/
+  border-color:#606265 transparent transparent transparent;
+  top: 23px;
+  right: 20px;
+}
+.user-shide{
+  display: none;
+  position: absolute;
+  top: 46px;
+  right: 20px;
+  transform-origin: center top 0px;
+  z-index: 2000;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top: 0;
+}
+.user-shide ul li{
+  padding: 0 15px;
+}
+.user-shide ul li:hover{
+  background-color: #ecf5ff;
+  cursor: pointer;
+}
+.user-shide ul li:hover a{
+  color: #66b1ff;
+}
+.table-group{
+  position: relative;
+  padding: 15px 15px 0 15px;
+  margin: 0 -15px 15px;
+  border-color: #e5e5e5 #eee #eee;
+  border-style: solid;
+  border-width: 1px 0;
+  -webkit-box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+  box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+  margin-right: 0;
+  margin-left: 0;
+  background-color: #fff;
+  border-color: #ddd;
+  border-width: 1px;
+  border-radius: 4px 4px 0 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.page-middle{
+  display:inline-block;
+  float:right;
+}
+.page-middle ul{
+  margin: 0;
+}
+.tfot-adbtn{
+  display: inline-block;
+  float: left;
+  /* line-height: 81px; */
+}

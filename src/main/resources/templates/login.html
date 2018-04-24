@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>CertusNet·IMS</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../css/reset.css" rel="stylesheet">
+  <link href="../../css/font.css" rel="stylesheet">
+  <link href="../../css/login.css" rel="stylesheet">
+  <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+  <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+  <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+  <div class="login-container">
+    <form>
+      <h3>CertusNet·IMS</h3>
+      <ul>
+        <li class="login-li">
+          <span>
+            <label>
+              <span class="icon-user"></span>
+            </label>
+            <input type="text" id="username" placeholder="用户名">
+          </span>
+        </li>
+        <li class="login-li">
+          <span>
+            <label>
+              <span class="icon-pwd"></span>
+            </label>
+            <input type="password" id="password" onblur="passwordBlur()" placeholder="密码">
+            <input type="text" id="text" style="display:none" onblur="textBlur()" placeholder="密码">
+            <label class="hpwd-icon">
+              <span class="icon-hpwd"></span>
+            </label>
+          </span>
+        </li>
+        <li id="lcode" class="login-li" style="display: none;">
+          <span>
+            <input type="text" id="Txtidcode" class="txtVerification" />
+            <span id="idcode"></span>
+          </span>
+        </li>
+        <li class="login-btn">
+          <button type="button" id="sigin">登录</button>
+        </li>
+      </ul>
+    </form>
+  </div>
+  <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+  <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件 -->
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- 加载 layer 弹出窗插件-->
+  <script src="../../js/layer/layer.js"></script>
+  <!-- 加载验证码插件 -->
+  <script src="../../js/idcode/idcode.js"></script>
+  <script>
+    // $("#sigin").click(function () {
+    //   window.location.href = "../index.html";
+    // });
+    $(".hpwd-icon").click(function () {
+      $("#text").toggle();
+      $("#password").toggle();
+    })
+    //text框失去焦点把text框的值赋值给password框
+    function textBlur() {
+      $("#password").val($("#text").val());
+    }
+    //password框失去焦点把password框的值赋值给text框
+    function passwordBlur() {
+      $("#text").val($("#password").val());
+    }
+  </script>
+  <script>
+    $.idcode.setCode();
+    var n = 0;
+    $("#sigin").click(function () {
+      var userName = $("#username").val();
+      var passWord = $("#password").val();
+      var code = $("#Txtidcode").val();
+      var IsBy = $.idcode.validateCode();
+      if (userName === null || userName === "" || userName === undefined) {
+        layer.msg('用户名不能为空！');
+        return;
+      }
+      if (passWord === null || passWord === "" || passWord === undefined) {
+        layer.msg('密码不能为空！');
+        return;
+      }
+      if ((userName != "" || passWord != "") && n < 3) {
+          debugger;
+        $.ajax({
+            url:"login",
+            data:{
+                username:"admin",
+                password:"admin"
+            }
+        });
+        layer.msg('账户或密码不正确，请重新输入！');
+        n++;
+        if (n === 2) {
+          $("#lcode").show();
+          n++;
+          return;
+        }
+        return;
+      }
+      if ((userName != "admin" || passWord != "admin") && n === 3) {
+        if (code === null || code === "" || code === undefined) {
+          layer.msg('验证码不能为空！');
+          return;
+        } if (!IsBy) {
+          layer.msg('验证码不正确，请重新输入！');
+          return;
+        } else {
+          layer.msg('账户或密码不正确，请重新输入！');
+          n++;
+          return;
+        }
+        return;
+      }
+      if ((userName != "admin" || passWord != "admin") && n >= 4) {
+        if (code === null || code === "" || code === undefined) {
+          layer.msg('验证码不能为空！');
+          return;
+        } if (!IsBy) {
+          layer.msg('验证码不正确，请重新输入！');
+          return;
+        } else {
+          layer.msg('账号已被冻结，请联系管理员！');
+          n++;
+          return;
+        }
+        return;
+      }
+      if(userName === "admin" && passWord === "admin" && n <= 2) {
+        layer.msg('登录成功！');
+        window.location.href = "../index.html";
+        return;
+      }
+      if(userName === "admin" && passWord === "admin" && n > 2 && n <= 4) {
+        if (code === null || code === "" || code === undefined) {
+          layer.msg('验证码不能为空！');
+          return;
+        } if (!IsBy) {
+          layer.msg('验证码不正确，请重新输入！');
+          return;
+        } else{
+          layer.msg('登录成功！');
+          window.location.href = "../index.html";
+          return;
+        }
+        return;
+      }
+      if(n > 4) {
+        layer.msg('账号已被冻结，请联系管理员！');
+        n++;
+        return;
+      }
+    });
+  </script>
+</body>
+
+</html>

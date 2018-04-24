@@ -1,0 +1,129 @@
+.h-title{
+  padding: 8px 16px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  border-left: 5px solid  #1b809e;
+  color: #333;
+  font-size: 100%;
+  line-height: 1.5em;
+  font-family: Source Sans Pro,Helvetica Neue,Arial,sans-serif;
+}
+.h-message{
+  padding: 8px 16px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  border-left: 5px solid #ce4844;
+  margin: 20px 0;
+  font-size: 100%;
+  color: #333;
+  line-height: 1.5em;
+}
+.h-promsg{
+  padding: 8px 16px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  border-left: 5px solid #aa6708;
+  margin: 20px 0;
+  font-size: 100%;
+  color: #333;
+  line-height: 1.5em;
+}
+.swiper_wrap{
+  position: relative;
+  /* width: 695px; */
+  height: 21px;
+  overflow: hidden;
+}
+.swiper_wrap ul{
+  position: relative;
+  top: 0;
+  left: 0;
+  /* width: 695px; */
+  color: #333;
+  font-size: 100%;
+  margin-top: 1px;
+}
+.swiper_wrap ul li{
+  line-height: 21px;
+}
+/* .swiper_wrap .lt{
+  position: absolute;
+  left: -1px;
+  top: 7px;
+  font-family: "宋体";
+  font-weight: bold;
+  color: #AAAAAA;
+}
+.swiper_wrap .gt{
+  position: absolute;
+  right: 26px;
+  top: 7px;
+  font-family: "宋体";
+  font-weight: bold;
+  color: #AAAAAA;
+} */
+.swiper_wrap .font_inner a{
+  color: #333;
+  text-decoration: none;
+}
+.swiper_wrap a:hover{
+  /* color: #FA9101; */
+  cursor: text;
+  text-decoration: none;
+}
+.h-search{
+  width: 100%;
+}
+.h-search .form-control:focus{
+  box-shadow: none;
+  border-color: #ccc;
+}
+.h-search .btn:focus{
+  box-shadow: none;
+  border-color: #ccc;
+  outline:0 auto transparent;
+}
+.h-search-result{
+  margin: 20px 0;
+  /* font-size: 14px; */
+}
+.h-search-result .table th{
+  font-weight: 700;
+}
+.h-tphead{
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.h-tphead span{
+  display: inline-block;
+  float: left;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 700;
+}
+.h-tphead .btn{
+  display: inline-block;
+  float: right;
+  line-height: 30px;
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+}
+.h-tpbox table .btn-link{
+  font-size: 100%;
+}
+/* .h-tpbox .table{
+  font-size: 14px;
+} */
+.h-tpbox .table th{
+  font-weight: 700;
+}
+/* .h-tpbox .table .btn{
+  font-size: 12px;
+  padding: 3px 12px;
+  border:0
+} */
+.h-tpbox .table .btn:focus{
+  outline: 0 auto transparent;
+}
